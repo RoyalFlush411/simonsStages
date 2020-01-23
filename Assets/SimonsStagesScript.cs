@@ -348,8 +348,9 @@ public class SimonsStagesScript : MonoBehaviour
                 device.ledGlow.enabled = false;
                 device.greyBase.enabled = true;
             }
-            flashingCurStage = false;
             yield return new WaitForSeconds(3f);
+            flashingCurStage = false;
+            yield return new WaitForSeconds(0);
         }
     }
 
