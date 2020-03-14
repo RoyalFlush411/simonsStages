@@ -829,7 +829,8 @@ public class SimonsStagesScript : MonoBehaviour
             }
             moduleLocked = false;
             checking = false;
-            yield return new WaitForSeconds(5f);
+            for (int x = 0; x < 20 && secondAttemptLock; x++) // Instead of having to wait 5 full seconds, interrupt early if secondAttemptLock is no longer enabled.
+                yield return new WaitForSeconds(0.25f);
             if (secondAttemptLock)
             {
                 moduleLocked = true;
